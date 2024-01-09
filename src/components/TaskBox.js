@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+import React, { useState } from "react"
+
+import AutoCompleteInput from "./AutoCompleteInput"
+const creatures = require("../data/creatures-unique.json")
 
 export default function TaskBox(props) {
 
@@ -12,13 +15,12 @@ export default function TaskBox(props) {
         <div className="box" style={{ padding: "8px 0" }}>
             <div className="card">
                 <div className="card-body">
-                    <select onChange={updateForm} className="form-select" style={{display: "inline-flex"}} aria-label="Large select example">
-                        <option selected>Choisir un type de mission</option>
+                    <select onChange={updateForm} className="form-select" style={{display: "inline-flex"}}>
+                        <option selected disabled>Choisir un type de mission</option>
                         <option value="0">Tuer</option>
                         <option value="1">Cibler</option>
-                        <option value="2">Posséder</option>
-                        <option value="3">Aller</option>
-                        <option value="4">Mini-jeu</option>
+                        <option value="2">Aller</option>
+                        <option value="3">Mini-jeu</option>
                     </select>
 
                     {taskType}
@@ -31,29 +33,22 @@ export default function TaskBox(props) {
 function TaskSelectorStep2(props) {
     let type = props.type
     let step = props.step
-    
+
     if (type == "0") {
         return (
             <>
                 <input type="number" id={ step + "-" + type + "-amount" } placeholder="Nombre de kills" />
-                <input type="text" id={ step + "-" + type + "-creature_id" } placeholder="Entitée" />
+                <AutoCompleteInput id={ step + "-" + type + "-creature_id" } options={creatures} placeholder="Entitée" />
             </>
         )
     } else if (type == "1") {
         return (
             <input type="text" id={ step + "-" + type + "-value" } placeholder="Entitée" />
         )
-    } else if (type == "2") {
+    }  else if (type == "3") {
         return (
-            <>
-                <input type="number" id={ step + "-" + type + "-amount" } placeholder="Quantité" />
-                <input type="text" id={ step + "-" + type + "-item_id" } placeholder="Entitée" />
-            </>
-        )
-    } else if (type == "4") {
-        return (
-            <select className="form-select" id={ step + "-" + type + "-value" } style={{display: "inline-flex"}} aria-label="Large select example">
-                <option selected>Choisir un type de mission</option>
+            <select className="form-select" id={ step + "-" + type + "-value" } style={{display: "inline-flex"}}>
+                <option selected disabled>Choisir un type de mission</option>
                 <option value="1">Mémo</option>
                 <option value="2">Pendu</option>
                 <option value="4">Juste prix</option>

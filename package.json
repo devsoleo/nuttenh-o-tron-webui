@@ -6,14 +6,15 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "merge-creatures": "node ./tools/merge-creatures.js"
   },
   "dependencies": {
     "react": "^18.0.0",
+    "react-bootstrap-typeahead": "^6.3.4",
     "react-dom": "^18.0.0",
     "react-scripts": "^5.0.0"
   },
-  "devDependencies": {},
   "browserslist": {
     "production": [
       ">0.2%",
