@@ -3,6 +3,8 @@ import { useLanguage } from './components/LanguageContext'
 
 import TaskBox from "./components/TaskBox"
 
+const creatures = require("./data/creatures.json")
+
 const App = () => {
 		const {language, setLanguage} = useLanguage()
 
@@ -16,9 +18,9 @@ const App = () => {
 
     const submit = event => {
 			const types = [
+				"K",
 				"T",
-				"C",
-				"A",
+				"G",
 				"M"
 			]
 
@@ -45,14 +47,41 @@ const App = () => {
 			})
 
 			for (const task of tasks) {
-				for (const key in task) {
-					event_key += task[key] + "-"
+				console.log(task)
+
+				switch (task.type) {
+					case "K":
+						console.log("ici", )
+
+						for (const key in task) {
+							if (key == "creature_id") {
+								let enUSName = creatures.filter((x) => x[".entry"] == task.creature_id)[0][".name"]
+								event_key += enUSName + "-"
+							} else {
+								event_key += task[key] + "-"
+							}
+						}
+						break
+					case "T":
+						for (const key in task) {
+							event_key += task[key] + "-"
+						}
+						break
+					case "G":
+						for (const key in task) {
+							event_key += task[key] + "-"
+						}
+						break
+					case "M":
+						for (const key in task) {
+							event_key += task[key] + "-"
+						}
+						break
 				}
 			}
 
 			if (event_key.endsWith("-")) event_key = event_key.slice(0, -1)
 
-			alert(event_key)
 			navigator.clipboard.writeText(btoa(encodeURIComponent(event_key)))
     }
 
@@ -69,7 +98,7 @@ const App = () => {
                 </button>
 
 								<select className="form-select" value={language} onChange={handleLanguageChange} style={{display: "inline-flex"}}>
-									<option disabled>Choisir une langue</option>
+									<option value="" selected disabled>Choisir une langue</option>
 									<option value="enUS" selected>EN</option>
 									<option value="frFR">FR</option>
 									<option value="esES">ES</option>

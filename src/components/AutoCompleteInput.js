@@ -24,6 +24,7 @@ export default function AutoCompleteInput({ id, options, placeholder }) {
       <input type="hidden" id={id} value={uid} />
 
       <Typeahead
+        style={{display: "inline-flex"}}
         labelKey="creature"
         onChange={handleChange}
         options={options}

@@ -1,7 +1,7 @@
 export default function TaskBoxGame({ step, type }) {
   return (
     <select className="form-select" id={ step + "-" + type + "-value" } style={{display: "inline-flex"}}>
-      <option selected disabled>Choisir un type de mission</option>
+      <option value="" selected disabled>Choisir un type de mission</option>
       <option value="1">Mémo</option>
       <option value="2">Pendu</option>
       <option value="4">Juste prix</option>
