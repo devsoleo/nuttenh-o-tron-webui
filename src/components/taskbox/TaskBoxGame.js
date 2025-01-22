@@ -1,20 +1,20 @@
 export default function TaskBoxGame({ step, type }) {
   return (
-    <select className="form-select" id={ step + "-" + type + "-value" } style={{display: "inline-flex"}}>
-      <option value="" selected disabled>Choisir un type de mission</option>
-      <option value="1">Mémo</option>
-      <option value="2">Pendu</option>
-      <option value="4">Juste prix</option>
-      <option value="4">Simon says / Mala'dit</option>
+    <select id={ step + "-" + type + "-value" } className="form-select">
+      <option value="" selected disabled>Choose a mini-game</option>
+      <option value="1">Memo</option>
+      <option value="2">Hangman</option>
+      <option value="3">The Price Is Right</option>
+      <option value="4">Simon says</option>
       <option value="5">Floor is lava</option>
-      <option value="5">Death Roll</option>
-      <option value="5">Jeux des batons </option>
-      <option value="5">Puzzle</option>
-      <option value="5">TicTacToe</option>
-      <option value="5">Question personnalisée</option>
-      <option value="5">Quel est ce son ?</option>
-      <option value="5">Qui est ce modèle 3D ?</option>
-      <option value="5">Quelle est cette icone ?</option>
+      <option value="6">Death Roll</option>
+      <option value="7">Nim Game</option>
+      <option value="8">Jigsaw Puzzle</option>
+      <option value="9">TicTacToe</option>
+      <option value="10">Question / Answer</option>
+      <option value="11">What is this sound?</option>
+      <option value="12">Who is this 3D model?</option>
+      <option value="13">What is this icon?</option>
     </select>
   )
 }

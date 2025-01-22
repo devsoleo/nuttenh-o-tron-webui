@@ -9,12 +9,12 @@ export default function TaskBoxSelector({ onChange }) {
   }
 
   return (
-    <select onChange={handleChange} className="form-select" style={{display: "inline-flex"}}>
-      <option value="" selected disabled>Choisir un type de mission</option>
-      <option value="0">Tuer</option>
-      <option value="1">Cibler</option>
-      <option value="2">Aller</option>
-      <option value="3">Mini-jeu</option>
+    <select onChange={handleChange} className="form-select">
+      <option value="" selected disabled>Choose a mission type</option>
+      <option value="0">Kill</option>
+      <option value="1">Target</option>
+      <option value="2">Go</option>
+      <option value="3">Mini-game</option>
     </select>
   )
 }

@@ -22,10 +22,14 @@ export default function TaskBox({ step }) {
 
   return (
     <div className="box" style={{ padding: "8px 0" }}>
-      <div className="card">
+      <div className="container card">
         <div className="card-body">
-          <TaskBoxSelector onChange={handleTaskTypeChange} />
-          {SelectedTaskBox && <SelectedTaskBox step={step} type={taskType} />}
+          <div className="row">
+            <div className="col">
+              <TaskBoxSelector onChange={handleTaskTypeChange} />
+            </div>
+            {SelectedTaskBox && <SelectedTaskBox step={step} type={taskType} />}
+          </div>
         </div>
       </div>
     </div>

@@ -87,33 +87,41 @@ const App = () => {
 
     return (
       <div>
-        <div className="card">
-            <div className="card-body">
-                <button onClick={onAddTaskButtonClick} type="button" className="btn btn-primary">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-plus" viewBox="0 0 16 16">
-                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
-                    </svg>
+        <div className="container card">
+					<div className="card-body">
+						<div className="row">
+							<div className="col">
+								<button onClick={onAddTaskButtonClick} type="button" className="btn btn-primary">
+										New task
 
-                    Add task
-                </button>
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-plus" viewBox="0 0 16 16">
+												<path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4"/>
+										</svg>
+								</button>
+							</div>
 
-								<select className="form-select" value={language} onChange={handleLanguageChange} style={{display: "inline-flex"}}>
-									<option value="" selected disabled>Choisir une langue</option>
+							<div className="col-6"></div>
+
+							<div className="col">
+								<select  value={language} onChange={handleLanguageChange} className="form-select">
+									<option value="" selected disabled>Choose a language</option>
 									<option value="enUS" selected>EN</option>
 									<option value="frFR">FR</option>
 									<option value="esES">ES</option>
 								</select>
-            </div>
+							</div>
+						</div>
+					</div>
         </div>
 
         <br />
 
         {taskList}
 
-        <div className="card">
+        <div className="container card">
             <div className="card-body">
                 <button onClick={submit} type="button" className="btn btn-primary">
-                    Copy event to clipboard !
+                    Copy event key to clipboard
                 </button>
             </div>
         </div>

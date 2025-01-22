@@ -10,19 +10,29 @@ export default function TaskBoxTarget({ step, type }) {
 
   return (
     <>
-      <select onChange={handleChange} className="form-select" style={{display: "inline-flex"}} >
-        <option value="" selected disabled>Choisir un type de cible</option>
-        <option value="1">Creature</option>
-        <option value="2">Joueur</option>
-      </select>
+      <div className="col">
+        <select onChange={handleChange} className="form-select">
+          <option value="" selected disabled>Choose a target type</option>
+          <option value="1">Unit</option>
+          <option value="2">Player</option>
+        </select>
+      </div>
 
+      <div className="col">
       {
-        targetType == "1" ? (
-          <AutoCompleteInput id={ step + "-" + type + "-creature_id" } options={creatures} placeholder="Entitée" />
-        ) : (
-          <input type="text" id={ step + "-" + type + "-player_name" } placeholder="Entitée" />
+        targetType == "1" && (
+          <AutoCompleteInput id={step + "-" + type + "-creature_id"} options={creatures} placeholder="Unit name" />
         )
       }
+      {
+        targetType == "2" && (
+          <input className="form-control" type="text" id={step + "-" + type + "-player_name"} placeholder="Player name" />
+        )
+      }
+      {
+        targetType != "1" && targetType != "2"
+      }
+      </div>
     </>
   )
 }

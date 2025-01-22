@@ -5,8 +5,12 @@ const creatures = require("../../data/creatures-unique.json")
 export default function TaskBoxKill({ step, type }) {
   return (
     <>
-      <input type="number" id={ step + "-" + type + "-amount" } placeholder="Nombre de kills" />
-      <AutoCompleteInput id={ step + "-" + type + "-creature_id" } options={creatures} placeholder="Entitée" />
+      <div className="col">
+        <input className="form-control" type="number" id={ step + "-" + type + "-amount" } placeholder="Amount" />
+      </div>
+      <div className="col">
+        <AutoCompleteInput id={ step + "-" + type + "-creature_id" } options={creatures} placeholder="Unit name" />
+      </div>
     </>
   )
 }
