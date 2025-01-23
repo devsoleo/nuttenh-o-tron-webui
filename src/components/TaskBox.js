@@ -2,12 +2,14 @@ import React, { useState } from "react"
 
 import TaskBoxKill from "./taskbox/TaskBoxKill"
 import TaskBoxTarget from "./taskbox/TaskBoxTarget"
+import TaskBoxGo from "./taskbox/TaskBoxGo"
 import TaskBoxGame from "./taskbox/TaskBoxGame"
 import TaskBoxSelector from "./TaskBoxSelector"
 
 const taskComponents = {
   "0": TaskBoxKill,
   "1": TaskBoxTarget,
+  "2": TaskBoxGo,
   "3": TaskBoxGame
 }
 

@@ -2,7 +2,6 @@ import { useState } from "react"
 import AutoCompleteInput from "../AutoCompleteInput"
 const creatures = require("../../data/creatures-unique.json")
 
-
 export default function TaskBoxTarget({ step, type }) {
   const [ targetType, setTargetType ] = useState("")
 

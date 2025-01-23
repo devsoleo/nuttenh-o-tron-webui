@@ -86,7 +86,7 @@ const App = () => {
     }
 
     return (
-      <div>
+      <>
         <div className="container card">
 					<div className="card-body">
 						<div className="row">
@@ -108,6 +108,7 @@ const App = () => {
 									<option value="enUS" selected>EN</option>
 									<option value="frFR">FR</option>
 									<option value="esES">ES</option>
+									<option value="deDE">DE</option>
 								</select>
 							</div>
 						</div>
@@ -125,8 +126,7 @@ const App = () => {
                 </button>
             </div>
         </div>
-
-      </div>
+      </>
     )
 }
 
